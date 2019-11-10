@@ -1,21 +1,23 @@
-var fs = require('fs');
+var abc = require('fs');
 
-fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+abc.open('mynewfile2.txt', 'w', function (err, file) {
+    if (err) throw err;
+    console.log('Opened!');
+});
+
+abc.appendFile('mynewfile2.txt', 'Hello content!', function (err) {
   if (err) throw err;
   console.log('Saved!');
 });
 
-fs.appendFile('mynewfile1.txt', ' This is my text.', function (err) {
+abc.appendFile('mynewfile2.txt', ' This is my text.', function (err) {
     if (err) throw err;
     console.log('Updated!');
 });
 
-fs.open('mynewfile2.txt', 'w', function (err, file) {
-    if (err) throw err;
-    console.log('Saved!');
-});
-
-fs.unlink('mynewfile2.txt', function (err) {
+/*
+abc.unlink('mynewfile2.txt', function (err) {
     if (err) throw err;
     console.log('File deleted!');
 });
+*/
