@@ -1,4 +1,6 @@
 npm install upper-case
 npm install formidable
+npm install express mongoose passport --save
+
 
 
